@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>halobestww</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black;
+            cursor: pointer;
+            font-family: 'SushiFusion', sans-serif;
+            position: relative;
+        }
+        h1 {
+            color: white;
+            font-size: 3em;
+            position: absolute;
+        }
+        video {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        a {
+            display: none;
+            color: white;
+            font-size: 1.5em;
+            position: absolute;
+            text-decoration: none;
+            transform: translateY(20px);
+        }
+        a:hover {
+            color: #7289da;
+        }
+        
+        .namemc-link {
+            display: none;
+            color: white;
+            font-size: 1.5em;
+            position: absolute;
+            text-decoration: none;
+            transform: translateY(50px);
+        }
+        .namemc-link:hover {
+            color: #ff4b4b;
+        }
+
+        .steam-link {
+            display: none;
+            color: white;
+            font-size: 1.5em;
+            position: absolute;
+            text-decoration: none;
+            transform: translateY(80px);
+        }
+        .steam-link:hover {
+            color: #00b3b3;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: white;
+            font-size: 2em;
+            font-family: 'SushiFusion', sans-serif;
+        }
+
+        @font-face {
+            font-family: 'SushiFusion';
+            src: url('font/font.ttf') format('truetype');
+        }
+    </style>
+</head>
+<body onclick="playVideo()">
+    <h1>halobestww</h1>
+    <video autoplay loop src="video/halobestww.mp4"></video>
+    <a href="https://discordapp.com/users/713827778537193623" target="_blank">discord</a>
+    <a class="namemc-link" href="https://namemc.com/profile/je3.2" target="_blank">namemc</a>
+    <a class="steam-link" href="https://steamcommunity.com/profiles/76561198847957644/" target="_blank">steam</a>
+
+    <!-- Footer Text -->
+    <div class="footer">
+        17halo
+    </div>
+
+    <script>
+        function playVideo() {
+            document.querySelector('h1').style.display = 'none';
+            const video = document.querySelector('video');
+            const discordLink = document.querySelector('a');
+            const namemcLink = document.querySelector('.namemc-link');
+            const steamLink = document.querySelector('.steam-link');
+            
+            video.style.display = 'block';
+            video.volume = 1;
+            video.play();
+            
+            discordLink.style.display = 'block';
+            namemcLink.style.display = 'block';
+            steamLink.style.display = 'block'; 
+        }
+    </script>
+</body>
+</html>
