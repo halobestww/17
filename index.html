@@ -18,7 +18,7 @@
             overflow: hidden;
             background-color: black;
             cursor: pointer;
-            font-family: 'SushiFusion', sans-serif;
+            font-family: 'font', sans-serif;
             position: relative;
         }
         h1 {
@@ -74,11 +74,11 @@
             right: 10px;
             color: white;
             font-size: 2em;
-            font-family: 'SushiFusion', sans-serif;
+            font-family: 'font', sans-serif;
         }
 
         @font-face {
-            font-family: 'SushiFusion';
+            font-family: 'font';
             src: url('font/font.ttf') format('truetype');
         }
     </style>
@@ -104,7 +104,7 @@
             const steamLink = document.querySelector('.steam-link');
             
             video.style.display = 'block';
-            video.volume = 1;
+            video.volume = 0.2;
             video.play();
             
             discordLink.style.display = 'block';
