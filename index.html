@@ -17,17 +17,10 @@
             height: 100vh;
             overflow: hidden;
             background-color: black;
-            cursor: pointer;
             font-family: 'font', sans-serif;
             position: relative;
         }
-        h1 {
-            color: white;
-            font-size: 3em;
-            position: absolute;
-        }
         video {
-            display: none;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -83,9 +76,8 @@
         }
     </style>
 </head>
-<body onclick="playVideo()">
-    <h1>halobestww</h1>
-    <video autoplay loop src="video/halobestww.mp4"></video>
+<body>
+    <video autoplay loop src="video/halobestww6.mp4"></video>
     <a href="https://discordapp.com/users/713827778537193623" target="_blank">discord</a>
     <a class="namemc-link" href="https://namemc.com/profile/je3.2" target="_blank">namemc</a>
     <a class="steam-link" href="https://steamcommunity.com/profiles/76561198847957644/" target="_blank">steam</a>
@@ -96,16 +88,10 @@
     </div>
 
     <script>
-        function playVideo() {
-            document.querySelector('h1').style.display = 'none';
-            const video = document.querySelector('video');
+        window.onload = function() {
             const discordLink = document.querySelector('a');
             const namemcLink = document.querySelector('.namemc-link');
             const steamLink = document.querySelector('.steam-link');
-            
-            video.style.display = 'block';
-            video.volume = 1;
-            video.play();
             
             discordLink.style.display = 'block';
             namemcLink.style.display = 'block';
@@ -114,4 +100,3 @@
     </script>
 </body>
 </html>
-
