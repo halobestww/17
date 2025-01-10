@@ -39,32 +39,28 @@
             position: absolute;
             text-decoration: none;
             transform: translateY(20px);
+            transition: color 0.3s;
         }
         a:hover {
             color: #7289da;
         }
-        
-        .namemc-link {
+        .link {
             display: none;
             color: white;
             font-size: 1.5em;
             position: absolute;
             text-decoration: none;
-            transform: translateY(50px);
+            transition: color 0.3s;
         }
-        .namemc-link:hover {
+        .link:hover {
+            color: inherit;
+        }
+        .namemc-link {
+            transform: translateY(50px);
             color: #ff4b4b;
         }
-
         .steam-link {
-            display: none;
-            color: white;
-            font-size: 1.5em;
-            position: absolute;
-            text-decoration: none;
             transform: translateY(80px);
-        }
-        .steam-link:hover {
             color: #00b3b3;
         }
 
@@ -86,30 +82,22 @@
 <body>
     <h1>halobestww</h1>
     <video autoplay loop src="video/halobestww6.mp4"></video>
-    <a href="https://discordapp.com/users/713827778537193623" target="_blank">discord</a>
-    <a class="namemc-link" href="https://namemc.com/profile/je3.2" target="_blank">namemc</a>
-    <a class="steam-link" href="https://steamcommunity.com/profiles/76561198847957644/" target="_blank">steam</a>
+    <a href="https://discordapp.com/users/713827778537193623" target="_blank" class="link">discord</a>
+    <a href="https://namemc.com/profile/je3.2" target="_blank" class="link namemc-link">namemc</a>
+    <a href="https://steamcommunity.com/profiles/76561198847957644/" target="_blank" class="link steam-link">steam</a>
 
-    <!-- Footer Text -->
-    <div class="footer">
-        17halo
-    </div>
+    <div class="footer">17halo</div>
 
     <script>
         window.onload = function() {
-            // Hide the heading and show video immediately after page loads
             document.querySelector('h1').style.display = 'none';
             const video = document.querySelector('video');
-            const discordLink = document.querySelector('a');
-            const namemcLink = document.querySelector('.namemc-link');
-            const steamLink = document.querySelector('.steam-link');
+            const links = document.querySelectorAll('.link');
             
             video.style.display = 'block';
             video.play();
             
-            discordLink.style.display = 'block';
-            namemcLink.style.display = 'block';
-            steamLink.style.display = 'block'; 
+            links.forEach(link => link.style.display = 'block'); 
         }
     </script>
 </body>
