@@ -57,11 +57,11 @@
         }
         .namemc-link {
             transform: translateY(50px);
-            color: #ff4b4b;
+            color: #f4f4f4;
         }
         .steam-link {
             transform: translateY(80px);
-            color: #00b3b3;
+            color: #ffffff;
         }
 
         .footer {
@@ -95,6 +95,7 @@
             const links = document.querySelectorAll('.link');
             
             video.style.display = 'block';
+            video.volume = 0.3;
             video.play();
             
             links.forEach(link => link.style.display = 'block'); 
