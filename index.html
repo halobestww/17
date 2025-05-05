@@ -31,7 +31,7 @@
             color: white;
             font-size: 1.2em;
             position: absolute;
-            top: calc(50% + 50px); /* Adjusted to place it below the h1 */
+            top: calc(50% + 50px);
             text-align: center;
         }
         video {
@@ -98,10 +98,12 @@
 
     <script>
         window.onload = function() {
+            const video = document.querySelector('video');
+            video.volume = 0.3;
+    
             document.body.addEventListener('click', function() {
                 document.querySelector('h1').style.display = 'none';
                 document.querySelector('p').style.display = 'none';
-                const video = document.querySelector('video');
                 const links = document.querySelectorAll('.link');
                 
                 video.style.display = 'block';
