@@ -99,21 +99,27 @@
     <script>
         window.onload = function () {
             const video = document.querySelector('video');
+            const links = document.querySelectorAll('.link');
+
             video.volume = 0.3;
             video.muted = true;
     
-            document.body.addEventListener('click', function () {
-                document.querySelector('h1').style.display = 'none';
-                document.querySelector('p').style.display = 'none';
-                const links = document.querySelectorAll('.link');
+            video.addEventListener('canplaythrough', () => {
+                document.body.addEventListener('click', function () {
+                    document.querySelector('h1').style.display = 'none';
+                    document.querySelector('p').style.display = 'none';
+                    
+                    video.style.display = 'block';
+                    video.muted = false;
+                    video.volume = 0.3;
     
-                video.style.display = 'block';
-                video.muted = false;ction
-                video.volume = 0.3;
-                video.play(); 
+                    video.play().catch((error) => {
+                        console.warn("Video play failed:", error);
+                    });
     
-                links.forEach(link => link.style.display = 'block');
-            }, { once: true });
+                    links.forEach(link => link.style.display = 'block');
+                }, { once: true });
+            });
         };
     </script>
 </body>
