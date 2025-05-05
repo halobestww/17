@@ -89,7 +89,7 @@
 <body>
     <h1>halobestww</h1>
     <p>click anywhere</p>
-    <video autoplay loop src="video/halobestww6.mp4"></video>
+    <video loop muted playsinline src="video/halobestww6.mp4"></video>
     <a href="https://discordapp.com/users/713827778537193623" target="_blank" class="link">discord</a>
     <a href="https://namemc.com/profile/je3.2" target="_blank" class="link namemc-link">namemc</a>
     <a href="https://steamcommunity.com/profiles/76561198847957644/" target="_blank" class="link steam-link">steam</a>
@@ -97,22 +97,24 @@
     <div class="footer">17halo</div>
 
     <script>
-        window.onload = function() {
+        window.onload = function () {
             const video = document.querySelector('video');
             video.volume = 0.3;
-            video.muted = false;
+            video.muted = true;
     
-            document.body.addEventListener('click', function() {
+            document.body.addEventListener('click', function () {
                 document.querySelector('h1').style.display = 'none';
                 document.querySelector('p').style.display = 'none';
                 const links = document.querySelectorAll('.link');
     
                 video.style.display = 'block';
-                video.play();
+                video.muted = false;ction
+                video.volume = 0.3;
+                video.play(); 
     
                 links.forEach(link => link.style.display = 'block');
             }, { once: true });
-        }
+        };
     </script>
 </body>
 </html>
