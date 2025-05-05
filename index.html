@@ -100,17 +100,17 @@
         window.onload = function() {
             const video = document.querySelector('video');
             video.volume = 0.3;
+            video.muted = false;
     
             document.body.addEventListener('click', function() {
                 document.querySelector('h1').style.display = 'none';
                 document.querySelector('p').style.display = 'none';
                 const links = document.querySelectorAll('.link');
-                
+    
                 video.style.display = 'block';
-                video.volume = 0.3;
                 video.play();
-                
-                links.forEach(link => link.style.display = 'block'); 
+    
+                links.forEach(link => link.style.display = 'block');
             }, { once: true });
         }
     </script>
