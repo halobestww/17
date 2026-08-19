@@ -93,31 +93,37 @@
 
     <div class="footer">17halo</div>
 
-    <script>
-        window.onload = function () {
-            const video = document.querySelector('video');
-            const links = document.querySelectorAll('.link');
+<script>
+window.addEventListener('load', () => {
+    const video = document.querySelector('video');
+    const links = document.querySelectorAll('.link');
+    const title = document.querySelector('h1');
+    const text = document.querySelector('p');
 
-            video.volume = 0.3;
+    video.volume = 0.3;
+    video.muted = true;
+
+    document.body.addEventListener('click', async () => {
+        title.style.display = 'none';
+        text.style.display = 'none';
+
+        video.style.display = 'block';
+
+        links.forEach(link => {
+            link.style.display = 'block';
+        });
+
+        try {
             video.muted = true;
-    
-            video.addEventListener('canplaythrough', () => {
-                document.body.addEventListener('click', function () {
-                    document.querySelector('h1').style.display = 'none';
-                    document.querySelector('p').style.display = 'none';
-                    
-                    video.style.display = 'block';
-                    video.muted = false;
-                    video.volume = 0.3;
-    
-                    video.play().catch((error) => {
-                        console.warn("Video play failed:", error);
-                    });
-    
-                    links.forEach(link => link.style.display = 'block');
-                }, { once: true });
-            });
-        };
-    </script>
+            await video.play();
+
+            video.muted = false;
+            video.volume = 0.3;
+        } catch (error) {
+            console.warn('Video play failed:', error);
+        }
+    }, { once: true });
+});
+</script>
 </body>
 </html>
